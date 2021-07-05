@@ -1,0 +1,15 @@
+/home/mazivila/Estudos/C#/project/skinet/Persistence/bin/Debug/net5.0/Persistence.deps.json
+/home/mazivila/Estudos/C#/project/skinet/Persistence/bin/Debug/net5.0/Persistence.dll
+/home/mazivila/Estudos/C#/project/skinet/Persistence/bin/Debug/net5.0/ref/Persistence.dll
+/home/mazivila/Estudos/C#/project/skinet/Persistence/bin/Debug/net5.0/Persistence.pdb
+/home/mazivila/Estudos/C#/project/skinet/Persistence/bin/Debug/net5.0/Domain.dll
+/home/mazivila/Estudos/C#/project/skinet/Persistence/bin/Debug/net5.0/Domain.pdb
+/home/mazivila/Estudos/C#/project/skinet/Persistence/obj/Debug/net5.0/Persistence.csproj.AssemblyReference.cache
+/home/mazivila/Estudos/C#/project/skinet/Persistence/obj/Debug/net5.0/Persistence.GeneratedMSBuildEditorConfig.editorconfig
+/home/mazivila/Estudos/C#/project/skinet/Persistence/obj/Debug/net5.0/Persistence.AssemblyInfoInputs.cache
+/home/mazivila/Estudos/C#/project/skinet/Persistence/obj/Debug/net5.0/Persistence.AssemblyInfo.cs
+/home/mazivila/Estudos/C#/project/skinet/Persistence/obj/Debug/net5.0/Persistence.csproj.CoreCompileInputs.cache
+/home/mazivila/Estudos/C#/project/skinet/Persistence/obj/Debug/net5.0/Persistence.csproj.CopyComplete
+/home/mazivila/Estudos/C#/project/skinet/Persistence/obj/Debug/net5.0/Persistence.dll
+/home/mazivila/Estudos/C#/project/skinet/Persistence/obj/Debug/net5.0/ref/Persistence.dll
+/home/mazivila/Estudos/C#/project/skinet/Persistence/obj/Debug/net5.0/Persistence.pdb

@@ -1,0 +1,12 @@
+/home/mazivila/Estudos/C#/project/skinet/Domain/bin/Debug/net5.0/Domain.deps.json
+/home/mazivila/Estudos/C#/project/skinet/Domain/bin/Debug/net5.0/Domain.dll
+/home/mazivila/Estudos/C#/project/skinet/Domain/bin/Debug/net5.0/ref/Domain.dll
+/home/mazivila/Estudos/C#/project/skinet/Domain/bin/Debug/net5.0/Domain.pdb
+/home/mazivila/Estudos/C#/project/skinet/Domain/obj/Debug/net5.0/Domain.csproj.AssemblyReference.cache
+/home/mazivila/Estudos/C#/project/skinet/Domain/obj/Debug/net5.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/mazivila/Estudos/C#/project/skinet/Domain/obj/Debug/net5.0/Domain.AssemblyInfoInputs.cache
+/home/mazivila/Estudos/C#/project/skinet/Domain/obj/Debug/net5.0/Domain.AssemblyInfo.cs
+/home/mazivila/Estudos/C#/project/skinet/Domain/obj/Debug/net5.0/Domain.csproj.CoreCompileInputs.cache
+/home/mazivila/Estudos/C#/project/skinet/Domain/obj/Debug/net5.0/Domain.dll
+/home/mazivila/Estudos/C#/project/skinet/Domain/obj/Debug/net5.0/ref/Domain.dll
+/home/mazivila/Estudos/C#/project/skinet/Domain/obj/Debug/net5.0/Domain.pdb
