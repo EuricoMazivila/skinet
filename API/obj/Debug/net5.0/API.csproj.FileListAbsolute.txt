@@ -63,3 +63,6 @@
 /home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/Infrastructure.dll
 /home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/Infrastructure.pdb
 /home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/Application.pdb
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/mono_crash.21acb2be5c.0.json
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/AutoMapper.dll
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
