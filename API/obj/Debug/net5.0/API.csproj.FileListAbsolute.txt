@@ -66,3 +66,11 @@
 /home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/mono_crash.21acb2be5c.0.json
 /home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/AutoMapper.dll
 /home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
+/home/mazivila/Estudos/C#/project/skinet/API/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll
