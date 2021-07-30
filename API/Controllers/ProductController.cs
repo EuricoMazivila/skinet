@@ -33,9 +33,10 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts()
+        public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts(
+            string sort, int? brandId, int? typeId)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var spec = new ProductsWithTypesAndBrandsSpecification(sort, brandId, typeId);
 
             var products = await _productsRepo.ListAsync(spec);
 
@@ -52,7 +53,8 @@ namespace API.Controllers
 
             var product = await _productsRepo.GetEntityWithSpec(spec);
 
-            if(product == null) return NotFound(new ApiResponse(404));
+            if(product == null) 
+                return NotFound(new ApiResponse(404));
 
             return _mapper.Map<Product, ProductToReturnDto>(product);
         }

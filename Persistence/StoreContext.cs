@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Reflection;
 using Domain;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,24 @@ namespace Persistence
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            //Somente para base de dados Sqlite para mudar o tipo de dado decimal para double
+
+            if(Database.ProviderName == "Microsoft.EntityFrameworkCore.Sqlite")
+            {
+                foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+                {
+                    var properties = entityType.ClrType.GetProperties()
+                    .Where(p => p.PropertyType == typeof(decimal));
+
+                    foreach (var property in properties)
+                    {
+                        modelBuilder.Entity(entityType.Name).Property(property.Name)
+                        .HasConversion<double>();
+                    }
+                }
+            }
+
         }
         
     }
