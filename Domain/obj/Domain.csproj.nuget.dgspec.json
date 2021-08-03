@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/mazivila/Estudos/C#/project/skinet/Domain/Domain.csproj": {}
+    "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "/home/mazivila/Estudos/C#/project/skinet/Domain/Domain.csproj": {
+    "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/mazivila/Estudos/C#/project/skinet/Domain/Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/mazivila/Estudos/C#/project/skinet/Domain/Domain.csproj",
-        "packagesPath": "/home/mazivila/.nuget/packages/",
-        "outputPath": "/home/mazivila/Estudos/C#/project/skinet/Domain/obj/",
+        "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Mazivila\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/mazivila/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Mazivila\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

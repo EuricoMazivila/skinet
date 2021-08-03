@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0EBtAmAA6qn1WmXyhkhzM3R/3bTBcQuPoK6qm4ZfYIMR7sfZU4RZzHiNKwIHt1NexJmvSasHs6ndtQeTVNc2yw==",
+  "dgSpecHash": "zBpMkwLeLA6mO16/uC6a9FbBb9qFPXJVLr3HpqZWtASgoMJmjh5mX3oiiG5aC5AaQJSG1qUufGEfBxwhTbHO/Q==",
   "success": true,
-  "projectFilePath": "/home/mazivila/Estudos/C#/project/skinet/Domain/Domain.csproj",
+  "projectFilePath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1800,19 +1800,19 @@
     ]
   },
   "packageFolders": {
-    "/home/mazivila/.nuget/packages/": {}
+    "C:\\Users\\Mazivila\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mazivila/Estudos/C#/project/skinet/Infrastructure/Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "/home/mazivila/Estudos/C#/project/skinet/Infrastructure/Infrastructure.csproj",
-      "packagesPath": "/home/mazivila/.nuget/packages/",
-      "outputPath": "/home/mazivila/Estudos/C#/project/skinet/Infrastructure/obj/",
+      "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\Mazivila\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/mazivila/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Mazivila\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
@@ -1824,8 +1824,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/mazivila/Estudos/C#/project/skinet/Application/Application.csproj": {
-              "projectPath": "/home/mazivila/Estudos/C#/project/skinet/Application/Application.csproj"
+            "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Application\\Application.csproj"
             }
           }
         }
@@ -1860,7 +1860,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.300/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
