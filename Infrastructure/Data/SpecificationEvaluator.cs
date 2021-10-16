@@ -3,7 +3,7 @@ using Application.Specifications;
 using Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure
+namespace Infrastructure.Data
 {
     public class SpecificationEvaluator<TEntity> where TEntity : BaseEntity
     {

@@ -3,15 +3,15 @@ using System.Net;
 
 namespace Application.Errors
 {
-    public class ApiResponse 
+    public class ApiResponse : Exception
     {
         public HttpStatusCode StatusCode { get; set; }
-        public string Message { get; set; }
+        public string ErrorMessage { get; set; }
         
         public ApiResponse(HttpStatusCode statusCode, string message = null)
         {
             StatusCode = statusCode;
-            Message = message ?? GetDefaultMessageForStatusCode(statusCode);
+            ErrorMessage = message ?? GetDefaultMessageForStatusCode(statusCode);
         }
 
         private string GetDefaultMessageForStatusCode(HttpStatusCode statusCode)

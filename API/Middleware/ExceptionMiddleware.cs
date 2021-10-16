@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Application.Errors;
 using System.Text.Json;
+using Application.Dtos;
 
 namespace API.Middleware
 {
@@ -30,22 +31,49 @@ namespace API.Middleware
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, ex.Message);
-                context.Response.ContentType = "application/json";
-                context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-
-                var response = _env.IsDevelopment()
-                    ? new ApiException(HttpStatusCode.InternalServerError, 
-                    ex.Message, ex.StackTrace.ToString())
-                    : new ApiException(HttpStatusCode.InternalServerError);
-
-                var options = new JsonSerializerOptions{PropertyNamingPolicy =
-                JsonNamingPolicy.CamelCase};
-
-                var json = JsonSerializer.Serialize(response, options);    
-
-                await context.Response.WriteAsync(json);
+                await HandleExceptionAsync(context, ex);
             }
+        }
+
+        private async Task HandleExceptionAsync(HttpContext context, Exception ex)
+        {
+            _logger.LogError(ex, ex.Message);
+            context.Response.ContentType = "application/json";
+            ApiException apiException = null;
+            int statusCode = 0;
+
+            switch (ex)
+            {
+                case ApiException apiEx: 
+                    statusCode = (int) apiEx.StatusCode;
+                    if (_env.IsDevelopment())
+                    {
+                        apiEx.Details = apiEx.StackTrace;
+                        apiException = apiEx;
+                    }
+                    else
+                    {
+                        apiException= apiEx;
+                    }
+                    break;
+                case { } e: 
+                    statusCode = (int) HttpStatusCode.InternalServerError;
+                    apiException = _env.IsDevelopment()
+                        ? new ApiException((HttpStatusCode) statusCode, e.Message, e.StackTrace)
+                        : new ApiException(HttpStatusCode.InternalServerError, e.Message);
+                    break;
+            }
+
+            context.Response.StatusCode = statusCode;
+            var responseReturn = _env.IsDevelopment()
+                ? new ApiExceptionDto{StatusCode = apiException.StatusCode, ErrorMessage = apiException.ErrorMessage, 
+                    Details = apiException.Details}
+                : new ApiExceptionDto{StatusCode = apiException.StatusCode, ErrorMessage = apiException.ErrorMessage };
+
+            var options = new JsonSerializerOptions{ PropertyNamingPolicy = JsonNamingPolicy.CamelCase};
+            var json = JsonSerializer.Serialize(responseReturn, options);
+
+            await context.Response.WriteAsync(json);
         }
     }
 }

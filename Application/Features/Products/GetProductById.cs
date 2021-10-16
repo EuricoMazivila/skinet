@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Application.Dtos;
+using Application.Errors;
 using Application.Interfaces;
 using Application.Specifications;
 using AutoMapper;
@@ -35,7 +37,7 @@ namespace Application.Features.Products
                 var product = await _productsRepo.GetEntityWithSpec(spec);
 
                 if (product == null)
-                    throw new Exception("Product not found");
+                    throw new ApiException(HttpStatusCode.NotFound,$"Product with id {request.ProductId} not found");
 
                 return _mapper.Map<Product, ProductToReturnDto>(product);
             }
