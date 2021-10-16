@@ -21,12 +21,12 @@ namespace Application.Features.Products
 
         public class GetProductByIdHandler : IRequestHandler<GetProductByIdQuery, ProductToReturnDto>
         {
-            private readonly IGenericRepository<Product> _productsRepo;
+            private readonly IUnitOfWork _unitOfWork;
             private readonly IMapper _mapper;
 
-            public GetProductByIdHandler(IGenericRepository<Product> productsRepo, IMapper mapper)
+            public GetProductByIdHandler(IUnitOfWork unitOfWork, IMapper mapper)
             {
-                _productsRepo = productsRepo;
+                _unitOfWork = unitOfWork;
                 _mapper = mapper;
             }
             
@@ -34,7 +34,7 @@ namespace Application.Features.Products
             {
                 var spec = new ProductsWithTypesAndBrandsSpecification(request.ProductId);
 
-                var product = await _productsRepo.GetEntityWithSpec(spec);
+                var product = await _unitOfWork.Repository<Product>().GetEntityWithSpec(spec);
 
                 if (product == null)
                     throw new ApiException(HttpStatusCode.NotFound,$"Product with id {request.ProductId} not found");

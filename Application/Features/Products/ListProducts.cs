@@ -20,12 +20,12 @@ namespace Application.Features.Products
         
         public class ListProductsHandler : IRequestHandler<ListProductsQuery, Pagination<ProductToReturnDto>>
         {
-            private readonly IGenericRepository<Product> _productsRepo;
+            private readonly IUnitOfWork _unitOfWork;
             private readonly IMapper _mapper;
 
-            public ListProductsHandler(IGenericRepository<Product> productsRepo, IMapper mapper)
+            public ListProductsHandler(IUnitOfWork unitOfWork, IMapper mapper)
             {
-                _productsRepo = productsRepo;
+                _unitOfWork = unitOfWork;
                 _mapper = mapper;
             }
             
@@ -34,9 +34,9 @@ namespace Application.Features.Products
                 var spec = new ProductsWithTypesAndBrandsSpecification(request.ProductSpecParams);
 
                 var countSpec = new ProductWithFiltersForCountSpecification(request.ProductSpecParams);
-                var totalItems = await _productsRepo.CountAsync(countSpec);
+                var totalItems = await _unitOfWork.Repository<Product>().CountAsync(countSpec);
             
-                var products = await _productsRepo.ListAsync(spec);
+                var products = await _unitOfWork.Repository<Product>().ListAllWithSpecAsync(spec);
 
                 var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
 

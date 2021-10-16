@@ -16,16 +16,16 @@ namespace Application.Features.ProductBrands
         
         public class ListProductBrandsHandler : IRequestHandler<ListProductBrandsQuery, IReadOnlyList<ProductBrand>>
         {
-            private readonly IGenericRepository<ProductBrand> _productBrandRepo;
+            private readonly IUnitOfWork _unitOfWork;
 
-            public ListProductBrandsHandler(IGenericRepository<ProductBrand> productBrandRepo)
+            public ListProductBrandsHandler(IUnitOfWork unitOfWork)
             {
-                _productBrandRepo = productBrandRepo;
+                _unitOfWork = unitOfWork;
             }
             
             public async Task<IReadOnlyList<ProductBrand>> Handle(ListProductBrandsQuery request, CancellationToken cancellationToken)
             {
-                return await _productBrandRepo.ListAllAsync();
+                return await _unitOfWork.Repository<ProductBrand>().ListAllAsync();
             }
         }
     }

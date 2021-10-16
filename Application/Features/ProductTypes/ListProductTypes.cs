@@ -15,17 +15,17 @@ namespace Application.Features.ProductTypes
         
         public class ListProductTypesHandler : IRequestHandler<ListProductTypesQuery, IReadOnlyList<ProductType>>
         {
-            private readonly IGenericRepository<ProductType> _productTypeRepo;
+            private readonly IUnitOfWork _unitOfWork;
 
-            public ListProductTypesHandler(IGenericRepository<ProductType> productTypeRepo)
+            public ListProductTypesHandler(IUnitOfWork unitOfWork)
             {
-                _productTypeRepo = productTypeRepo;
+                _unitOfWork = unitOfWork;
             }
             
             public async Task<IReadOnlyList<ProductType>> Handle(ListProductTypesQuery request, 
                 CancellationToken cancellationToken)
             {
-                return await _productTypeRepo.ListAllAsync();
+                return await _unitOfWork.Repository<ProductType>().ListAllAsync();
             }
         }
         
