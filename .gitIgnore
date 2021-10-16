@@ -5,5 +5,4 @@ riderModule.iml
 bin/
 .idea
 /.idea/.idea.APM/.idea/.name
-API/appsettings.Development.json
 *.db
