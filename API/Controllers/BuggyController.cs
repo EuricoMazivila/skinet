@@ -20,7 +20,7 @@ namespace API.Controllers
 
             if(thing == null)
             {
-                return NotFound(new ApiResponse(404));
+                return NotFound(new ApiResponse(HttpStatusCode.NotFound));
             }
             
             return Ok();   
@@ -39,7 +39,7 @@ namespace API.Controllers
         [HttpGet("badrequest")]
         public ActionResult GetBadResquest()
         {
-            return BadRequest(new ApiResponse(400));   
+            return BadRequest(new ApiResponse(HttpStatusCode.BadRequest));   
         }
 
         [HttpGet("badrequest/{id}")]

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "L8SQhZCLRKQ1Lx53zGlMn+LEkIhrSJ61d3sqrK8tn/1jP3JgEL/anevzgO2p0vRXKJvIzndLlNsmi8y/Piy/Rg==",
+  "dgSpecHash": "Xs52BstMUqNFIpOHSV2rFEGM29rg5m7LU+1PVYq/auA5bzUSP9WRSRZ5qWnTh+0A/u19AmAJdJlEqkX1LBp6jg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Application\\Application.csproj",
+  "projectFilePath": "D:\\Studies\\C#\\Skinet\\skinet\\Application\\Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mazivila\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\Mazivila\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\Mazivila\\.nuget\\packages\\mediatr\\9.0.0\\mediatr.9.0.0.nupkg.sha512",
+    "C:\\Users\\Mazivila\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\9.0.0\\mediatr.extensions.microsoft.dependencyinjection.9.0.0.nupkg.sha512",
     "C:\\Users\\Mazivila\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Mazivila\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.3\\microsoft.data.sqlite.core.5.0.3.nupkg.sha512",
     "C:\\Users\\Mazivila\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",

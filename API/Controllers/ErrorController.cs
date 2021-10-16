@@ -1,3 +1,4 @@
+using System.Net;
 using Application.Errors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,7 +10,7 @@ namespace API.Controllers
     public class ErrorController : BaseApiController
     {
         
-        public IActionResult Error(int code)
+        public IActionResult Error(HttpStatusCode code)
         {
             return new ObjectResult(new ApiResponse(code));
         }

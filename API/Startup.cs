@@ -1,7 +1,9 @@
 using API.Extensions;
 using API.Middleware;
+using Application.Features.Products;
 using Application.Helpers;
 using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -43,6 +45,7 @@ namespace API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(MappingProfiles));
+            services.AddMediatR(typeof(ListProducts.ListProductsQuery).Assembly);
             services.AddControllers();
             services.AddApplicationServices();
             services.AddSwaggerDocumentation();

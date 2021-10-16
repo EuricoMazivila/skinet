@@ -22,3 +22,15 @@ C:\Users\Mazivila\Music\C#\Skinet\skinet\Domain\obj\Debug\net5.0\Domain.csproj.C
 C:\Users\Mazivila\Music\C#\Skinet\skinet\Domain\obj\Debug\net5.0\Domain.dll
 C:\Users\Mazivila\Music\C#\Skinet\skinet\Domain\obj\Debug\net5.0\ref\Domain.dll
 C:\Users\Mazivila\Music\C#\Skinet\skinet\Domain\obj\Debug\net5.0\Domain.pdb
+D:\Studies\C#\Skinet\skinet\Domain\bin\Debug\net5.0\Domain.deps.json
+D:\Studies\C#\Skinet\skinet\Domain\bin\Debug\net5.0\Domain.dll
+D:\Studies\C#\Skinet\skinet\Domain\bin\Debug\net5.0\ref\Domain.dll
+D:\Studies\C#\Skinet\skinet\Domain\bin\Debug\net5.0\Domain.pdb
+D:\Studies\C#\Skinet\skinet\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+D:\Studies\C#\Skinet\skinet\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Studies\C#\Skinet\skinet\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+D:\Studies\C#\Skinet\skinet\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+D:\Studies\C#\Skinet\skinet\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+D:\Studies\C#\Skinet\skinet\Domain\obj\Debug\net5.0\Domain.dll
+D:\Studies\C#\Skinet\skinet\Domain\obj\Debug\net5.0\ref\Domain.dll
+D:\Studies\C#\Skinet\skinet\Domain\obj\Debug\net5.0\Domain.pdb

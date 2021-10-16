@@ -1,8 +1,10 @@
+using System.Net;
+
 namespace Application.Errors
 {
     public class ApiException : ApiResponse
     {
-        public ApiException(int statusCode, string message = null, string details = null) 
+        public ApiException(HttpStatusCode statusCode, string message = null, string details = null) 
         : base(statusCode, message)
         {
             Details = details;

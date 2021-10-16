@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QsePzhxA/YtSaQNTZTqQ9mWMImqrwVo7lTo/kPfP7KKfCWh2B2akW3KpQu7YJBhFkWAM5Hp8IgPdhM+z/G4/vg==",
+  "dgSpecHash": "8s+EzlLgxlHTaU4UPtcjH7JBS49HgCbW/6WYfHADu3EAHhX1/emzhFXYdjYIUsbTrf0Y2eqs+9VILIA/AN33uQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj",
+  "projectFilePath": "D:\\Studies\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mazivila\\.nuget\\packages\\microsoft.data.sqlite.core\\5.0.3\\microsoft.data.sqlite.core.5.0.3.nupkg.sha512",
     "C:\\Users\\Mazivila\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\3.1.6\\microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj": {}
+    "D:\\Studies\\C#\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Application\\Application.csproj": {
+    "D:\\Studies\\C#\\Skinet\\skinet\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\Studies\\C#\\Skinet\\skinet\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Application\\Application.csproj",
+        "projectPath": "D:\\Studies\\C#\\Skinet\\skinet\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Mazivila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Application\\obj\\",
+        "outputPath": "D:\\Studies\\C#\\Skinet\\skinet\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mazivila\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -20,17 +20,18 @@
           "net5.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj"
+              "D:\\Studies\\C#\\Skinet\\skinet\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Studies\\C#\\Skinet\\skinet\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj": {
-                "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj"
+              "D:\\Studies\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj": {
+                "projectPath": "D:\\Studies\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -48,6 +49,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -65,18 +70,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj": {
+    "D:\\Studies\\C#\\Skinet\\skinet\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\Studies\\C#\\Skinet\\skinet\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj",
+        "projectPath": "D:\\Studies\\C#\\Skinet\\skinet\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Mazivila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\obj\\",
+        "outputPath": "D:\\Studies\\C#\\Skinet\\skinet\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mazivila\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -85,7 +90,8 @@
           "net5.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
           "net5.0": {
@@ -117,18 +123,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\Studies\\C#\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\Studies\\C#\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "D:\\Studies\\C#\\Skinet\\skinet\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Mazivila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Infrastructure\\obj\\",
+        "outputPath": "D:\\Studies\\C#\\Skinet\\skinet\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mazivila\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -137,14 +143,15 @@
           "net5.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Application\\Application.csproj"
+              "D:\\Studies\\C#\\Skinet\\skinet\\Application\\Application.csproj": {
+                "projectPath": "D:\\Studies\\C#\\Skinet\\skinet\\Application\\Application.csproj"
               }
             }
           }
@@ -179,18 +186,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj": {
+    "D:\\Studies\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "D:\\Studies\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj",
+        "projectPath": "D:\\Studies\\C#\\Skinet\\skinet\\Persistence\\Persistence.csproj",
         "packagesPath": "C:\\Users\\Mazivila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Persistence\\obj\\",
+        "outputPath": "D:\\Studies\\C#\\Skinet\\skinet\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mazivila\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -199,14 +206,15 @@
           "net5.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.telerik.com/nuget": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Mazivila\\Music\\C#\\Skinet\\skinet\\Domain\\Domain.csproj"
+              "D:\\Studies\\C#\\Skinet\\skinet\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\Studies\\C#\\Skinet\\skinet\\Domain\\Domain.csproj"
               }
             }
           }
@@ -241,7 +249,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
         }
       }
     }
