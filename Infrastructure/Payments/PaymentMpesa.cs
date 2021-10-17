@@ -1,8 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Net;
+using System.Threading.Tasks;
+using Application.Errors;
 using Application.Helpers;
 using Application.Interfaces;
 using Microsoft.Extensions.Configuration;
 using MPesa;
+using Environment = MPesa.Environment;
 
 namespace Infrastructure.Payments
 {
@@ -26,9 +30,15 @@ namespace Infrastructure.Payments
                 .Transaction("T12344A")
                 .Build();
 
-            var response = await client.Receive(paymentRequest);
-
-            return response;
+            try
+            {
+                var response = await client.Receive(paymentRequest);
+                return response;
+            }
+            catch (Exception e)
+            {
+                throw new ApiException(HttpStatusCode.InternalServerError, e.Message);
+            }
         }
 
         private Client Client()
@@ -44,6 +54,5 @@ namespace Infrastructure.Payments
             
             return client;
         }
-        
     }
 }

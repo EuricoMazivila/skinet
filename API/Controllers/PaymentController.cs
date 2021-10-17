@@ -8,7 +8,7 @@ namespace API.Controllers
     public class PaymentController : BaseApiController
     {
         [HttpPost("c2b")]
-        public async Task<PaymentResponse> PayBasket([FromBody] PaymentRequest paymentRequest)
+        public async Task<ActionResult<PaymentResponse>> PayBasket([FromBody] PaymentRequest paymentRequest)
         {
             return await Mediator.Send(new PaymentC2B.PaymentC2BCommand {PaymentRequest = paymentRequest});
         }

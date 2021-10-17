@@ -37,27 +37,13 @@ namespace Application.Features.Payments
             {
                 var c2BResponse = await _paymentMpesa.C2B(request.PaymentRequest);
 
-                PaymentResponse paymentResponse;
-                
-                if (c2BResponse.IsSuccessfully)
+                var paymentResponse = new PaymentResponse
                 {
-                    paymentResponse = new PaymentResponse
-                    {
-                        IsSuccessfully = c2BResponse.IsSuccessfully,
-                        Description = c2BResponse.Description,
-                        PaymentRequest = request.PaymentRequest
-                    };
-                }
-                else
-                { 
-                    paymentResponse = new PaymentResponse
-                    {
-                        IsSuccessfully = c2BResponse.IsSuccessfully,
-                        Description = c2BResponse.Description,
-                        PaymentRequest = request.PaymentRequest
-                    };
-                }
-                
+                    IsSuccessfully = c2BResponse.IsSuccessfully,
+                    Description = c2BResponse.Description,
+                    PaymentRequest = request.PaymentRequest
+                };
+
                 return paymentResponse;
             }
         }
