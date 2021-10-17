@@ -1,7 +1,9 @@
 using System.Linq;
+using Application.Dtos;
 using Application.Errors;
 using Application.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Payments;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -13,6 +15,7 @@ namespace API.Extensions
         {
             services.AddScoped(typeof(IGenericRepository<>),(typeof(GenericRepository<>)));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IPaymentMpesa, PaymentMpesa>();
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.InvalidModelStateResponseFactory = actionContext =>
@@ -26,8 +29,16 @@ namespace API.Extensions
                     {
                         Errors = errors
                     };
+                    
+                    var errorResponseReturn = new ApiValidationErrorResponseDto
+                    {
+                        Errors = errorResponse.Errors,
+                        ErrorMessage = errorResponse.ErrorMessage,
+                        StatusCode = errorResponse.StatusCode
+                    };
 
-                    return new BadRequestObjectResult(errorResponse);    
+                    return new BadRequestObjectResult(errorResponseReturn);
+                    
                 };
             });
             

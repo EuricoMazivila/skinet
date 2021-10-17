@@ -11,7 +11,9 @@
 
     <ItemGroup>
       <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+      <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.3" />
       <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+      <PackageReference Include="Paymentsds.Sdk.MPesaSdk" Version="0.1.0" />
     </ItemGroup>
 
 </Project>

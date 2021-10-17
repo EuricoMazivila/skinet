@@ -50,9 +50,17 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.3.3, )"
+            },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "Paymentsds.Sdk.MPesaSdk": {
+              "target": "Package",
+              "version": "[0.1.0, )"
             }
           },
           "imports": [

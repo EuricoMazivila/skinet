@@ -228,3 +228,8 @@ D:\Studies\C#\Skinet\skinet\API\obj\Debug\net5.0\API.dll
 D:\Studies\C#\Skinet\skinet\API\obj\Debug\net5.0\ref\API.dll
 D:\Studies\C#\Skinet\skinet\API\obj\Debug\net5.0\API.pdb
 D:\Studies\C#\Skinet\skinet\API\obj\Debug\net5.0\API.genruntimeconfig.cache
+D:\Studies\C#\Skinet\skinet\API\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+D:\Studies\C#\Skinet\skinet\API\bin\Debug\net5.0\FluentValidation.dll
+D:\Studies\C#\Skinet\skinet\API\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+D:\Studies\C#\Skinet\skinet\API\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Studies\C#\Skinet\skinet\API\bin\Debug\net5.0\MPesa.dll
