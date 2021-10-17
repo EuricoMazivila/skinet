@@ -30,15 +30,14 @@ namespace Infrastructure.Payments
                 .Transaction("T12344A")
                 .Build();
 
-            try
+            var response = await client.Receive(paymentRequest);
+                
+            if (response.Code == "INS-0")
             {
-                var response = await client.Receive(paymentRequest);
                 return response;
             }
-            catch (Exception e)
-            {
-                throw new ApiException(HttpStatusCode.InternalServerError, e.Message);
-            }
+                
+            throw new ApiPaymentException(response.Code, response.Description);
         }
 
         private Client Client()

@@ -40,7 +40,9 @@ namespace API.Middleware
             _logger.LogError(ex, ex.Message);
             context.Response.ContentType = "application/json";
             ApiException apiException = null;
+            ApiPaymentException payException = null;
             int statusCode = 0;
+            bool payment = false;
 
             switch (ex)
             {
@@ -56,6 +58,12 @@ namespace API.Middleware
                         apiException= apiEx;
                     }
                     break;
+                
+                case ApiPaymentException payEx:
+                    payment = true;
+                    payException = payEx;
+                    break;
+                
                 case { } e: 
                     statusCode = (int) HttpStatusCode.InternalServerError;
                     apiException = _env.IsDevelopment()
@@ -65,10 +73,21 @@ namespace API.Middleware
             }
 
             context.Response.StatusCode = statusCode;
-            var responseReturn = _env.IsDevelopment()
-                ? new ApiExceptionDto{StatusCode = apiException.StatusCode, ErrorMessage = apiException.ErrorMessage, 
-                    Details = apiException.Details}
-                : new ApiExceptionDto{StatusCode = apiException.StatusCode, ErrorMessage = apiException.ErrorMessage };
+            Object responseReturn = null;
+            
+            if (payment)
+            {
+                responseReturn = new ApiPaymentExceptionDto
+                    {StatusCode = payException.StatusCode, ErrorMessage = payException.ErrorMessage};
+            }
+            else
+            {
+                 responseReturn = _env.IsDevelopment()
+                    ? new ApiExceptionDto{StatusCode = apiException.StatusCode, ErrorMessage = apiException.ErrorMessage, 
+                        Details = apiException.Details}
+                    : new ApiExceptionDto{StatusCode = apiException.StatusCode, ErrorMessage = apiException.ErrorMessage };    
+            }
+
 
             var options = new JsonSerializerOptions{ PropertyNamingPolicy = JsonNamingPolicy.CamelCase};
             var json = JsonSerializer.Serialize(responseReturn, options);

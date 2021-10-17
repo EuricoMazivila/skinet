@@ -39,9 +39,10 @@ namespace API.Controllers
                 .Transaction("T12344A")
                 .Build();
 
-            try
+            var response = await client.Receive(paymentRequest);
+                
+            if (response.Code == "INS-0")
             {
-                var response = await client.Receive(paymentRequest);
                 var paymentResponse = new PaymentResponse
                 {
                     IsSuccessfully = response.IsSuccessfully,
@@ -51,10 +52,8 @@ namespace API.Controllers
                 
                 return paymentResponse;
             }
-            catch (Exception e)
-            {
-                throw new ApiException(HttpStatusCode.InternalServerError, e.Message);
-            }
+                
+            throw new ApiPaymentException(response.Code, response.Description);
         }
     }
 }
