@@ -40,6 +40,27 @@ namespace Infrastructure.Payments
             throw new ApiPaymentException(response.Code, response.Description);
         }
 
+        public async Task<Response> B2C(PaymentRequest paymentReq)
+        {
+            var client = Client();
+            
+            var paymentRequest = new Request.Builder()
+                .Amount(paymentReq.Amount)
+                .To($"{paymentReq.PhoneNumber}")
+                .Reference(RandomStringGenerator.GetString())
+                .Transaction("T12344A")
+                .Build();
+
+            var response = await client.Receive(paymentRequest);
+                
+            if (response.Code == "INS-0")
+            {
+                return response;
+            }
+                
+            throw new ApiPaymentException(response.Code, response.Description);
+        }
+
         public async Task<Response> QueryTransactionStatus(PaymentRequest queryReq)
         {
             var client = Client();

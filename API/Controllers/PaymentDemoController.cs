@@ -35,8 +35,44 @@ namespace API.Controllers
             var paymentRequest = new Request.Builder()
                 .Amount(paymentReq.Amount)
                 .From($"{paymentReq.PhoneNumber}")
-                // .Reference(RandomStringGenerator.GetString())
-                .Reference("WERWEWREWR")
+                .Reference(RandomStringGenerator.GetString())
+                .Transaction("T12344A")
+                .Build();
+
+            var response = await client.Receive(paymentRequest);
+                
+            if (response.Code == "INS-0")
+            {
+                var paymentResponse = new PaymentResponse
+                {
+                    IsSuccessfully = response.IsSuccessfully,
+                    Description = response.Description,
+                    Code = response.Code
+                };
+                
+                return paymentResponse;
+            }
+                
+            throw new ApiPaymentException(response.Code, response.Description);
+        }
+        
+        [HttpPost("b2c")]
+        public async Task<ActionResult<PaymentResponse>> PaymentB2C([FromBody] PaymentRequest paymentReq)
+        {
+            var client = new Client.Builder()
+                .ApiKey(_configuration["PaymentMpesa:ApiKey"])
+                .PublicKey(_configuration["PaymentMpesa:PublicKey"])
+                .ServiceProviderCode("171717")
+                .InitiatorIdentifier("SJGW67fK")
+                .Environment(Environment.Development)
+                .SecurityCredential("Mpesa2019")
+                .Build();
+            
+            //B2C
+            var paymentRequest = new Request.Builder()
+                .Amount(paymentReq.Amount)
+                .To($"{paymentReq.PhoneNumber}")
+                .Reference(RandomStringGenerator.GetString())
                 .Transaction("T12344A")
                 .Build();
 
