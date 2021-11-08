@@ -12,37 +12,37 @@ namespace Application.Features.Payments
         public class PaymentB2CCommand : IRequest<PaymentResponse>
         {
             public PaymentRequest PaymentRequest { get; set; }
+        }
 
-            public class PaymentB2CValidator : AbstractValidator<PaymentB2CCommand>
+        public class PaymentB2CValidator : AbstractValidator<PaymentB2CCommand>
+        {
+            public PaymentB2CValidator()
             {
-                public PaymentB2CValidator()
-                {
-                    RuleFor(x => x.PaymentRequest).NotEmpty();
-                }
+                RuleFor(x => x.PaymentRequest).NotEmpty();
+            }
+        }
+
+        public class PaymentB2CHandler : IRequestHandler<PaymentB2CCommand, PaymentResponse>
+        {
+            private readonly IPaymentMpesa _paymentMpesa;
+
+            public PaymentB2CHandler(IPaymentMpesa paymentMpesa)
+            {
+                _paymentMpesa = paymentMpesa;
             }
 
-            public class PaymentB2CHandler : IRequestHandler<PaymentB2CCommand, PaymentResponse>
+            public async Task<PaymentResponse> Handle(PaymentB2CCommand request,
+                CancellationToken cancellationToken)
             {
-                private readonly IPaymentMpesa _paymentMpesa;
-
-                public PaymentB2CHandler(IPaymentMpesa paymentMpesa)
+                var b2CResponse = await _paymentMpesa.B2C(request.PaymentRequest);
+                var paymentResponse = new PaymentResponse
                 {
-                    _paymentMpesa = paymentMpesa;
-                }
+                    IsSuccessfully = b2CResponse.IsSuccessfully,
+                    Description = b2CResponse.Description,
+                    Code = b2CResponse.Code
+                };
 
-                public async Task<PaymentResponse> Handle(PaymentB2CCommand request,
-                    CancellationToken cancellationToken)
-                {
-                    var b2CResponse = await _paymentMpesa.B2C(request.PaymentRequest);
-                    var paymentResponse = new PaymentResponse
-                    {
-                        IsSuccessfully = b2CResponse.IsSuccessfully,
-                        Description = b2CResponse.Description,
-                        Code = b2CResponse.Code
-                    };
-
-                    return paymentResponse;
-                }
+                return paymentResponse;
             }
         }
     }
