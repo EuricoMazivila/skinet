@@ -20,11 +20,11 @@ namespace API.Controllers
         }
 
         [HttpPost("c2b")]
-        public async Task<ActionResult<PaymentResponse>> PayBasket([FromBody] PaymentRequest paymentReq)
+        public async Task<ActionResult<PaymentResponse>> PaymentC2B([FromBody] PaymentRequest paymentReq)
         {
             var client = new Client.Builder()
-                .ApiKey(_configuration["ApiKey"])
-                .PublicKey(_configuration["PublicKey"])
+                .ApiKey(_configuration["PaymentMpesa:ApiKey"])
+                .PublicKey(_configuration["PaymentMpesa:PublicKey"])
                 .ServiceProviderCode("171717")
                 .InitiatorIdentifier("SJGW67fK")
                 .Environment(Environment.Development)
