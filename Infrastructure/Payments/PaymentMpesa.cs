@@ -24,7 +24,7 @@ namespace Infrastructure.Payments
             var client = Client();
 
             var paymentRequest = new Request.Builder()
-                .Amount(paymentReq.TotalPrice)
+                .Amount(paymentReq.Amount)
                 .From($"{paymentReq.PhoneNumber}")
                 .Reference(RandomStringGenerator.GetString())
                 .Transaction("T12344A")
@@ -40,7 +40,7 @@ namespace Infrastructure.Payments
             throw new ApiPaymentException(response.Code, response.Description);
         }
 
-        public async Task<Response> QueryTransactionStatus(QueryRequest queryReq)
+        public async Task<Response> QueryTransactionStatus(PaymentRequest queryReq)
         {
             var client = Client();
             
@@ -58,6 +58,26 @@ namespace Infrastructure.Payments
                 
             throw new ApiPaymentException(response.Code, response.Description);
             
+        }
+
+        public async Task<Response> Reversal(PaymentRequest paymentRequest)
+        {
+            var client = Client();
+
+            var reversalRequest = new Request.Builder()
+                .Amount(paymentRequest.Amount)
+                .Reference(paymentRequest.Reference)
+                .Transaction(paymentRequest.Transaction)
+                .Build();
+
+            var response = await client.Revert(reversalRequest);
+            
+            if (response.Code == "INS-0")
+            {
+                return response;
+            }
+                
+            throw new ApiPaymentException(response.Code, response.Description);
         }
 
         private Client Client()

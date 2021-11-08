@@ -33,9 +33,10 @@ namespace API.Controllers
             
             //C2B
             var paymentRequest = new Request.Builder()
-                .Amount(paymentReq.TotalPrice)
+                .Amount(paymentReq.Amount)
                 .From($"{paymentReq.PhoneNumber}")
-                .Reference(RandomStringGenerator.GetString())
+                // .Reference(RandomStringGenerator.GetString())
+                .Reference("WERWEWREWR")
                 .Transaction("T12344A")
                 .Build();
 
@@ -47,7 +48,7 @@ namespace API.Controllers
                 {
                     IsSuccessfully = response.IsSuccessfully,
                     Description = response.Description,
-                    PaymentRequest = paymentReq
+                    Code = response.Code
                 };
                 
                 return paymentResponse;
@@ -57,7 +58,7 @@ namespace API.Controllers
         }
         
         [HttpGet("queryStatus")]
-        public async Task<ActionResult<QueryResponse>> QueryTransactionStatus([FromBody] QueryRequest queryReq)
+        public async Task<ActionResult<PaymentResponse>> QueryTransactionStatus([FromBody] PaymentRequest queryReq)
         {
             var client = new Client.Builder()
                 .ApiKey(_configuration["PaymentMpesa:ApiKey"])
@@ -78,12 +79,12 @@ namespace API.Controllers
                 
             if (response.Code == "INS-0")
             {
-                var queryResponse = new QueryResponse
+                var queryResponse = new PaymentResponse
                 {
                     IsSuccessfully = response.IsSuccessfully,
                     Description = response.Description,
                     TransactionStatus =  response.TransactionStatus,
-                    QueryRequest = queryReq
+                    Code = response.Code
                 };
                 
                 return queryResponse;
@@ -91,5 +92,42 @@ namespace API.Controllers
                 
             throw new ApiPaymentException(response.Code, response.Description);
         }
+        
+        [HttpPut("reversal")]
+        public async Task<ActionResult<PaymentResponse>> Reversal([FromBody] PaymentRequest paymentReq)
+        {
+            var client = new Client.Builder()
+                .ApiKey(_configuration["PaymentMpesa:ApiKey"])
+                .PublicKey(_configuration["PaymentMpesa:PublicKey"])
+                .ServiceProviderCode("171717")
+                .InitiatorIdentifier("SJGW67fK")
+                .Environment(Environment.Development)
+                .SecurityCredential("Mpesa2019")
+                .Build();
+            
+            //Reversal
+            var paymentRequest = new Request.Builder()
+                .Amount(paymentReq.Amount)
+                .Reference(paymentReq.Reference)
+                .Transaction(paymentReq.Transaction)
+                .Build();
+
+            var response = await client.Revert(paymentRequest);
+                
+            if (response.Code == "INS-0")
+            {
+                var paymentResponse = new PaymentResponse
+                {
+                    IsSuccessfully = response.IsSuccessfully,
+                    Description = response.Description,
+                    Code = response.Code
+                };
+                
+                return paymentResponse;
+            }
+                
+            throw new ApiPaymentException(response.Code, response.Description);
+        }
+        
     }
 }

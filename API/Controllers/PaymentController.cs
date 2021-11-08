@@ -14,10 +14,16 @@ namespace API.Controllers
         }
 
         [HttpGet("queryStatus")]
-        public async Task<ActionResult<QueryResponse>> QueryTransactionStatus([FromBody] QueryRequest queryRequest)
+        public async Task<ActionResult<PaymentResponse>> QueryTransactionStatus([FromBody] PaymentRequest queryRequest)
         {
             return await Mediator.Send(new QueryTransactionStatus.QueryTransactionStatusQuery
-                {QueryRequest = queryRequest});
+                {PaymentRequest = queryRequest});
+        }
+
+        [HttpPut("reversal")]
+        public async Task<ActionResult<PaymentResponse>> Reversal([FromBody] PaymentRequest paymentRequest)
+        {
+            return await Mediator.Send(new Reversal.ReversalCommand {PaymentRequest = paymentRequest});
         }
     }
 }

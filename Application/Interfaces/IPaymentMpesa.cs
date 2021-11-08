@@ -7,6 +7,7 @@ namespace Application.Interfaces
     public interface IPaymentMpesa
     {
         Task<Response> C2B(PaymentRequest paymentRequest);
-        Task<Response> QueryTransactionStatus(QueryRequest queryRequest);
+        Task<Response> QueryTransactionStatus(PaymentRequest queryRequest);
+        Task<Response> Reversal(PaymentRequest paymentRequest);
     }
 }

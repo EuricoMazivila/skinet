@@ -9,20 +9,20 @@ namespace Application.Features.Payments
 {
     public class QueryTransactionStatus
     {
-        public class QueryTransactionStatusQuery : IRequest<QueryResponse>
+        public class QueryTransactionStatusQuery : IRequest<PaymentResponse>
         {
-            public QueryRequest QueryRequest { get; set; }
+            public PaymentRequest PaymentRequest { get; set; }
         }
         
         public class QueryTransactionStatusValidator : AbstractValidator<QueryTransactionStatusQuery>
         {
             public QueryTransactionStatusValidator()
             {
-                RuleFor(x => x.QueryRequest).NotEmpty();
+                RuleFor(x => x.PaymentRequest).NotEmpty();
             }
         }
 
-        public class QueryTransactionStatusHandler : IRequestHandler<QueryTransactionStatusQuery, QueryResponse>
+        public class QueryTransactionStatusHandler : IRequestHandler<QueryTransactionStatusQuery, PaymentResponse>
         {
             private readonly IPaymentMpesa _paymentMpesa;
 
@@ -31,16 +31,15 @@ namespace Application.Features.Payments
                 _paymentMpesa = paymentMpesa;
             }
             
-            public async Task<QueryResponse> Handle(QueryTransactionStatusQuery request, CancellationToken cancellationToken)
+            public async Task<PaymentResponse> Handle(QueryTransactionStatusQuery request, CancellationToken cancellationToken)
             {
-                var queryTransactionStatus = await _paymentMpesa.QueryTransactionStatus(request.QueryRequest);
+                var queryTransactionStatus = await _paymentMpesa.QueryTransactionStatus(request.PaymentRequest);
 
-                var queryResponse = new QueryResponse
+                var queryResponse = new PaymentResponse
                 {
                     IsSuccessfully = queryTransactionStatus.IsSuccessfully,
                     Description = queryTransactionStatus.Description,
-                    TransactionStatus = queryTransactionStatus.TransactionStatus,
-                    QueryRequest = request.QueryRequest
+                    TransactionStatus = queryTransactionStatus.TransactionStatus
                 };
 
                 return queryResponse;

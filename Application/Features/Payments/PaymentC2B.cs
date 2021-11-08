@@ -41,7 +41,7 @@ namespace Application.Features.Payments
                 {
                     IsSuccessfully = c2BResponse.IsSuccessfully,
                     Description = c2BResponse.Description,
-                    PaymentRequest = request.PaymentRequest
+                    Code = c2BResponse.Code
                 };
 
                 return paymentResponse;
