@@ -55,5 +55,41 @@ namespace API.Controllers
                 
             throw new ApiPaymentException(response.Code, response.Description);
         }
+        
+        [HttpGet("queryStatus")]
+        public async Task<ActionResult<QueryResponse>> QueryTransactionStatus([FromBody] QueryRequest queryReq)
+        {
+            var client = new Client.Builder()
+                .ApiKey(_configuration["PaymentMpesa:ApiKey"])
+                .PublicKey(_configuration["PaymentMpesa:PublicKey"])
+                .ServiceProviderCode("171717")
+                .InitiatorIdentifier("SJGW67fK")
+                .Environment(Environment.Development)
+                .SecurityCredential("Mpesa2019")
+                .Build();
+            
+            //QueryTransaction
+            var queryRequest = new Request.Builder()
+                .Reference(queryReq.Reference)
+                .Subject("T12344A")
+                .Build();
+
+            var response = await client.Query(queryRequest);
+                
+            if (response.Code == "INS-0")
+            {
+                var queryResponse = new QueryResponse
+                {
+                    IsSuccessfully = response.IsSuccessfully,
+                    Description = response.Description,
+                    TransactionStatus =  response.TransactionStatus,
+                    QueryRequest = queryReq
+                };
+                
+                return queryResponse;
+            }
+                
+            throw new ApiPaymentException(response.Code, response.Description);
+        }
     }
 }

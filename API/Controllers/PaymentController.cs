@@ -12,5 +12,12 @@ namespace API.Controllers
         {
             return await Mediator.Send(new PaymentC2B.PaymentC2BCommand {PaymentRequest = paymentRequest});
         }
+
+        [HttpGet("queryStatus")]
+        public async Task<ActionResult<QueryResponse>> QueryTransactionStatus([FromBody] QueryRequest queryRequest)
+        {
+            return await Mediator.Send(new QueryTransactionStatus.QueryTransactionStatusQuery
+                {QueryRequest = queryRequest});
+        }
     }
 }

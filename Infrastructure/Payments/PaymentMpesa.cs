@@ -26,7 +26,7 @@ namespace Infrastructure.Payments
             var paymentRequest = new Request.Builder()
                 .Amount(paymentReq.TotalPrice)
                 .From($"{paymentReq.PhoneNumber}")
-                .Reference(RandomStringGenerator.GetString())
+                .Reference("EEEEEEEEEEE")
                 .Transaction("T12344A")
                 .Build();
 
@@ -38,6 +38,26 @@ namespace Infrastructure.Payments
             }
                 
             throw new ApiPaymentException(response.Code, response.Description);
+        }
+
+        public async Task<Response> QueryTransactionStatus(QueryRequest queryReq)
+        {
+            var client = Client();
+            
+            var queryRequest = new Request.Builder()
+                .Reference(queryReq.Reference)
+                .Subject("T12344A")
+                .Build();
+            
+            var response = await client.Query(queryRequest);
+            
+            if (response.Code == "INS-0")
+            {
+                return response;
+            }
+                
+            throw new ApiPaymentException(response.Code, response.Description);
+            
         }
 
         private Client Client()
