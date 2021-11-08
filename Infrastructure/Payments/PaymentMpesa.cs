@@ -26,7 +26,7 @@ namespace Infrastructure.Payments
             var paymentRequest = new Request.Builder()
                 .Amount(paymentReq.TotalPrice)
                 .From($"{paymentReq.PhoneNumber}")
-                .Reference("EEEEEEEEEEE")
+                .Reference(RandomStringGenerator.GetString())
                 .Transaction("T12344A")
                 .Build();
 
